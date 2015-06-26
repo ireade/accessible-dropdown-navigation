@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Accessible Dropdown Navigation</title>
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="">
+	<meta name="keywords" content="">
+	
+	<link rel="stylesheet" href="reset.css">
+	<link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+	<div class="container">
+
+		<nav id="nav" class="">
+			<ul>
+				<li id="toggleMenu"><a href="/">Menu</a></li>
+				<li class="hasSubMenu">
+					<a href="#">Children & Grandchildren</a>
+
+					<ul>
+						<li><a href="#">Three.One</a></li>
+						<li><a href="#">Three.One</a></li>
+						<li class="hasSubMenu">
+							<a href="#">Three.One</a>
+
+							<ul>
+								<li><a href="#">Three.Two</a></li>
+								<li><a href="#">Three.Two</a></li>
+								<li><a href="#">Three.Two</a></li>
+							</ul>
+						</li>
+					</ul>
+				</li><li class="hasSubMenu">
+					<a href="#">No Grandchildren</a>
+
+					<ul>
+						<li><a href="#">Three.One</a></li>
+						<li><a href="#">Three.One</a></li>
+					</ul>
+				</li><li><a href="#">Four</a></li><li class="hasSubMenu">
+					<a href="#">Another</a>
+
+					<ul>
+						<li><a href="#">Three.One</a></li>
+						<li><a href="#">Three.One</a></li>
+						<li><a href="#">Three.One</a></li>
+						<li class="hasSubMenu">
+							<a href="#">Another.One</a>
+
+							<ul>
+								<li><a href="#">Another.Two</a></li>
+								<li><a href="#">Three.Two</a></li>
+								<li><a href="#">Three.Two</a></li>
+							</ul>
+						</li>
+						<li><a href="#">Three.One</a></li>
+						<li><a href="#">Three.One</a></li>
+					</ul>
+				</li><li><a href="#">One</a></li><li><a href="#">Two</a></li>
+			</ul>
+		</nav>
+
+	</div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="script.js"></script>
+
+</body>
+</html>
+
+
+
+
+
+
+

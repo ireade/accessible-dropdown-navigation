@@ -1,0 +1,172 @@
+html {
+  font-family: 'Proxima Nova'; }
+
+body {
+  height: 100vh; }
+
+* {
+  box-sizing: border-box; }
+
+.container {
+  width: 90%;
+  margin: 10vh auto; }
+
+a {
+  color: inherit; }
+
+/*
+ *	Accessible Multi-Level Dropdown Navigation Menu
+ *	Created by Ire Aderinokun
+ *
+ */
+/* RESET */
+#nav, #nav ul, #nav li {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  list-style: none; }
+
+#nav {
+  position: relative;
+  height: 60px;
+  width: auto;
+  max-width: 100%;
+  box-sizing: border-box;
+  background-color: #ffdb3a;
+  color: #000; }
+  @media screen and (min-width: 800px) {
+    #nav {
+      display: inline-block; } }
+  @media screen and (max-width: 800px) {
+    #nav {
+      display: block; } }
+
+#nav li {
+  position: relative; }
+
+#nav a {
+  text-decoration: none;
+  height: 100%;
+  display: block;
+  padding: 0 20px; }
+
+li.hasSubMenu > a:after {
+  content: '+';
+  margin-left: 10px;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 700; }
+
+@media screen and (min-width: 800px) {
+  #nav li {
+    text-align: left;
+    width: 200px; } }
+@media screen and (max-width: 800px) {
+  #nav li {
+    text-align: center;
+    width: 100%; } }
+
+@media screen and (min-width: 800px) {
+  li.hasSubMenu > ul {
+    display: none;
+    position: absolute;
+    width: 150px;
+    z-index: 50; } }
+@media screen and (max-width: 800px) {
+  li.hasSubMenu > ul {
+    position: relative;
+    display: block;
+    top: 0; } }
+
+/* The Main Navigation Bar */
+#nav > ul {
+  height: 60px;
+  line-height: 60px; }
+
+#nav > ul > li {
+  position: relative;
+  background-color: transparent;
+  text-align: center; }
+  @media screen and (min-width: 800px) {
+    #nav > ul > li {
+      display: inline-block;
+      width: auto; } }
+  @media screen and (max-width: 800px) {
+    #nav > ul > li {
+      display: block;
+      width: 100%; } }
+
+#nav > ul > li > a {
+  background-color: #ffdb3a; }
+  #nav > ul > li > a:hover, #nav > ul > li > a:focus {
+    background-color: #D9BA31; }
+
+@media screen and (min-width: 800px) {
+  #nav > ul > li:not(:last-child) {
+    border-right: 1px solid #D9BA31;
+    border-bottom: none; } }
+@media screen and (max-width: 800px) {
+  #nav > ul > li:not(:last-child) {
+    border-right: none; }
+    #nav > ul > li:not(:last-child):not(:first-child) {
+      border-bottom: 1px solid #D9BA31; } }
+
+@media screen and (min-width: 800px) {
+  #nav > ul > li:not(#toggleMenu):not(.js-showElement) {
+    display: inline-block; } }
+@media screen and (max-width: 800px) {
+  #nav > ul > li:not(#toggleMenu):not(.js-showElement) {
+    display: none; } }
+
+@media screen and (min-width: 800px) {
+  #nav #toggleMenu {
+    display: none; } }
+@media screen and (max-width: 800px) {
+  #nav #toggleMenu {
+    display: block;
+    width: 100%; } }
+
+/* Second Level Dropdown */
+#nav > ul > li.hasSubMenu > ul {
+  background-color: #D9BA31; }
+  @media screen and (min-width: 800px) {
+    #nav > ul > li.hasSubMenu > ul {
+      top: 60px;
+      /* height of #nav element + padding bottom */
+      left: 0; } }
+  @media screen and (max-width: 800px) {
+    #nav > ul > li.hasSubMenu > ul {
+      width: 100%;
+      position: relative; }
+      #nav > ul > li.hasSubMenu > ul:not(.js-showElement) {
+        display: none; } }
+
+#nav > ul > li > ul > li > a {
+  background-color: #D9BA31; }
+  #nav > ul > li > ul > li > a:hover, #nav > ul > li > ul > li > a:focus {
+    background-color: #ffdb3a; }
+
+/* Third Level Dropdown */
+@media screen and (min-width: 800px) {
+  #nav > ul > li.hasSubMenu > ul > li.hasSubMenu > ul {
+    top: 0;
+    left: 200px;
+    /* width of ul */ } }
+@media screen and (max-width: 800px) {
+  #nav > ul > li.hasSubMenu > ul > li.hasSubMenu > ul {
+    width: 100%;
+    position: relative; }
+    #nav > ul > li.hasSubMenu > ul > li.hasSubMenu > ul:not(.js-showElement) {
+      display: none; } }
+
+#nav > ul > li > ul > li > ul > li > a {
+  background-color: #ffdb3a; }
+  #nav > ul > li > ul > li > ul > li > a:hover, #nav > ul > li > ul > li > ul > li > a:focus {
+    background-color: #D9BA31; }
+
+/* */
+#nav .js-hideElement {
+  display: none; }
+
+#nav .js-showElement {
+  display: block; }
