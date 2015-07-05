@@ -1,11 +1,5 @@
 html {
-  font-family: 'Proxima Nova'; }
-
-body {
-  height: 100vh; }
-
-* {
-  box-sizing: border-box; }
+  font-family: 'Proxima Nova', 'Helvetica Neue', sans-serif; }
 
 .container {
   width: 90%;
@@ -19,30 +13,31 @@ a {
  *	Created by Ire Aderinokun
  *
  */
-/* RESET */
+/* Resets */
 #nav, #nav ul, #nav li {
   margin: 0;
   padding: 0;
   border: 0;
-  list-style: none; }
+  list-style: none;
+  box-sizing: border-box; }
 
 #nav {
   position: relative;
-  height: 60px;
-  width: auto;
+  min-height: 60px;
   max-width: 100%;
-  box-sizing: border-box;
   background-color: #ffdb3a;
-  color: #000; }
-  @media screen and (min-width: 800px) {
+  color: #000;
+  border: 1px solid #D9BA31; }
+  @media screen and (min-width: 650px) {
     #nav {
       display: inline-block; } }
-  @media screen and (max-width: 800px) {
+  @media screen and (max-width: 650px) {
     #nav {
       display: block; } }
 
 #nav li {
-  position: relative; }
+  position: relative;
+  /* children positioned absolutely */ }
 
 #nav a {
   text-decoration: none;
@@ -50,95 +45,114 @@ a {
   display: block;
   padding: 0 20px; }
 
-li.hasSubMenu > a:after {
-  content: '+';
+@media screen and (min-width: 650px) {
+  #nav a:focus {
+    outline: none; } }
+
+.plusMark {
+  /* added with javaScript */
   margin-left: 10px;
-  color: #fff;
   font-size: 20px;
   font-weight: 700; }
 
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 650px) {
   #nav li {
     text-align: left;
     width: 200px; } }
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 650px) {
   #nav li {
     text-align: center;
     width: 100%; } }
 
-@media screen and (min-width: 800px) {
-  li.hasSubMenu > ul {
-    display: none;
-    position: absolute;
-    width: 150px;
-    z-index: 50; } }
-@media screen and (max-width: 800px) {
-  li.hasSubMenu > ul {
-    position: relative;
-    display: block;
-    top: 0; } }
+@media screen and (min-width: 650px) {
+  a + ul {
+    position: absolute; }
+    a + ul:not(.js-showElement) {
+      display: none; } }
+@media screen and (max-width: 650px) {
+  a + ul {
+    position: relative; }
+    a + ul:not(.js-hideElement) {
+      display: block; } }
 
-/* The Main Navigation Bar */
-#nav > ul {
-  height: 60px;
+/* The Main Navigation Bar - Navigation Level One */
+#nav > ul, .fa {
+  height: 100%;
   line-height: 60px; }
 
 #nav > ul > li {
   position: relative;
-  background-color: transparent;
   text-align: center; }
-  @media screen and (min-width: 800px) {
+  @media screen and (min-width: 650px) {
     #nav > ul > li {
-      display: inline-block;
+      float: left;
       width: auto; } }
-  @media screen and (max-width: 800px) {
+  @media screen and (max-width: 650px) {
     #nav > ul > li {
+      float: none;
       display: block;
       width: 100%; } }
 
 #nav > ul > li > a {
   background-color: #ffdb3a; }
-  #nav > ul > li > a:hover, #nav > ul > li > a:focus {
+  #nav > ul > li > a:hover, #nav > ul > li > a:focus, #nav > ul > li > a.js-openSubMenu {
     background-color: #D9BA31; }
 
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 650px) {
   #nav > ul > li:not(:last-child) {
     border-right: 1px solid #D9BA31;
     border-bottom: none; } }
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 650px) {
   #nav > ul > li:not(:last-child) {
     border-right: none; }
     #nav > ul > li:not(:last-child):not(:first-child) {
       border-bottom: 1px solid #D9BA31; } }
 
-@media screen and (min-width: 800px) {
-  #nav > ul > li:not(#toggleMenu):not(.js-showElement) {
-    display: inline-block; } }
-@media screen and (max-width: 800px) {
-  #nav > ul > li:not(#toggleMenu):not(.js-showElement) {
-    display: none; } }
+#nav > ul > li:not(#toggleMenu):not(.js-showElement) {
+  /* first level nav li except toggleMenu icon */ }
+  @media screen and (min-width: 650px) {
+    #nav > ul > li:not(#toggleMenu):not(.js-showElement) {
+      display: inline-block; } }
+  @media screen and (max-width: 650px) {
+    #nav > ul > li:not(#toggleMenu):not(.js-showElement) {
+      display: none; } }
 
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 650px) {
   #nav #toggleMenu {
     display: none; } }
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 650px) {
   #nav #toggleMenu {
     display: block;
-    width: 100%; } }
+    width: 100%; }
+    #nav #toggleMenu.js-open {
+      border-bottom: 1px solid #D9BA31; }
+      #nav #toggleMenu.js-open .fa-times {
+        display: block; }
+      #nav #toggleMenu.js-open .fa-bars {
+        display: none; }
+      #nav #toggleMenu.js-open a {
+        background-color: #D9BA31; }
+    #nav #toggleMenu:not(.js-open) .fa-times {
+      display: none; }
+    #nav #toggleMenu:not(.js-open) .fa-bars {
+      display: block; } }
+
+label[for="toggleMenu-icons"] {
+  position: absolute;
+  opacity: 0; }
 
 /* Second Level Dropdown */
-#nav > ul > li.hasSubMenu > ul {
+#nav > ul > li > ul {
   background-color: #D9BA31; }
-  @media screen and (min-width: 800px) {
-    #nav > ul > li.hasSubMenu > ul {
+  @media screen and (min-width: 650px) {
+    #nav > ul > li > ul {
       top: 60px;
-      /* height of #nav element + padding bottom */
       left: 0; } }
-  @media screen and (max-width: 800px) {
-    #nav > ul > li.hasSubMenu > ul {
+  @media screen and (max-width: 650px) {
+    #nav > ul > li > ul {
       width: 100%;
       position: relative; }
-      #nav > ul > li.hasSubMenu > ul:not(.js-showElement) {
+      #nav > ul > li > ul:not(.js-showElement) {
         display: none; } }
 
 #nav > ul > li > ul > li > a {
@@ -146,17 +160,20 @@ li.hasSubMenu > a:after {
   #nav > ul > li > ul > li > a:hover, #nav > ul > li > ul > li > a:focus {
     background-color: #ffdb3a; }
 
+#nav > ul > li > ul > li:not(:last-child) a {
+  border-bottom: 1px solid #ffdb3a; }
+
 /* Third Level Dropdown */
-@media screen and (min-width: 800px) {
-  #nav > ul > li.hasSubMenu > ul > li.hasSubMenu > ul {
+@media screen and (min-width: 650px) {
+  #nav > ul > li > ul > li > ul {
     top: 0;
     left: 200px;
     /* width of ul */ } }
-@media screen and (max-width: 800px) {
-  #nav > ul > li.hasSubMenu > ul > li.hasSubMenu > ul {
+@media screen and (max-width: 650px) {
+  #nav > ul > li > ul > li > ul {
     width: 100%;
     position: relative; }
-    #nav > ul > li.hasSubMenu > ul > li.hasSubMenu > ul:not(.js-showElement) {
+    #nav > ul > li > ul > li > ul:not(.js-showElement) {
       display: none; } }
 
 #nav > ul > li > ul > li > ul > li > a {
@@ -164,9 +181,21 @@ li.hasSubMenu > a:after {
   #nav > ul > li > ul > li > ul > li > a:hover, #nav > ul > li > ul > li > ul > li > a:focus {
     background-color: #D9BA31; }
 
-/* */
+#nav > ul > li > ul > li > ul > li:not(:last-child) > a {
+  border-bottom: 1px solid #D9BA31; }
+
+/* Javascript classes */
 #nav .js-hideElement {
   display: none; }
 
 #nav .js-showElement {
   display: block; }
+
+/* Fallback for users without javascript */
+html.no-js li:hover > a + ul {
+  display: block; }
+@media screen and (max-width: 650px) {
+  html.no-js #nav:hover > ul > li:not(#toggleMenu) {
+    display: block; }
+  html.no-js #nav:hover li:hover > a + ul {
+    display: block; } }
