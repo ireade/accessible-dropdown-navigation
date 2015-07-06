@@ -1,5 +1,5 @@
 html {
-  font-family: 'Proxima Nova', 'Helvetica Neue', sans-serif; }
+  font-family: 'Proxima Nova', 'Helvetica Neue', 'Arial', sans-serif; }
 
 .container {
   width: 90%;
@@ -36,8 +36,7 @@ a {
       display: block; } }
 
 #nav li {
-  position: relative;
-  /* children positioned absolutely */ }
+  position: relative; }
 
 #nav a {
   text-decoration: none;
@@ -50,7 +49,6 @@ a {
     outline: none; } }
 
 .plusMark {
-  /* added with javaScript */
   margin-left: 10px;
   font-size: 20px;
   font-weight: 700; }
@@ -64,6 +62,7 @@ a {
     text-align: center;
     width: 100%; } }
 
+/* Any sub menu */
 @media screen and (min-width: 650px) {
   a + ul {
     position: absolute; }
@@ -137,7 +136,7 @@ a {
     #nav #toggleMenu:not(.js-open) .fa-bars {
       display: block; } }
 
-label[for="toggleMenu-icons"] {
+span#toggleMenu-text {
   position: absolute;
   opacity: 0; }
 
@@ -192,10 +191,10 @@ label[for="toggleMenu-icons"] {
   display: block; }
 
 /* Fallback for users without javascript */
-html.no-js li:hover > a + ul {
+html.no-js li:hover > a + ul, html.no-js li:focus > a + ul {
   display: block; }
 @media screen and (max-width: 650px) {
-  html.no-js #nav:hover > ul > li:not(#toggleMenu) {
+  html.no-js #nav:hover > ul > li:not(#toggleMenu), html.no-js #nav:focus > ul > li:not(#toggleMenu) {
     display: block; }
-  html.no-js #nav:hover li:hover > a + ul {
+  html.no-js #nav:hover li:hover > a + ul, html.no-js #nav:hover li:focus > a + ul, html.no-js #nav:focus li:hover > a + ul, html.no-js #nav:focus li:focus > a + ul {
     display: block; } }

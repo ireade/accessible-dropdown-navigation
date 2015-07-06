@@ -20,9 +20,15 @@
 
 				<!-- Menu tooggle on smaller screens  -->
 				<li id="toggleMenu">
-					<!-- As icons are being used to represent open/close, provide a label for screen readers -->
-					<label for="toggleMenu-icons">Toggle Navigation</label>
-					<a href="/sitemap.html" id="toggleMenu-icons" aria-label="ToggleMenu"> <i class="fa fa-bars"></i> <i class="fa fa-times"></i> </a>
+					
+					<a href="/sitemap.html"> 
+						<i class="fa fa-bars"></i> <i class="fa fa-times"></i> 
+
+						<!-- As icons are being used to represent open/close, 
+							provide hidden text for screen readers -->
+						<span id="toggleMenu-text">Toggle Navigation</span>
+						
+					</a>
 				</li>
 				
 				<!-- Simple menu item without sub menu -->
