@@ -97,6 +97,9 @@ a {
   #nav > ul > li > a:hover, #nav > ul > li > a:focus, #nav > ul > li > a.js-openSubMenu {
     background-color: #D9BA31; }
 
+#nav > ul > li:hover > a, #nav > ul > li:focus > a {
+  background-color: #D9BA31; }
+
 @media screen and (min-width: 650px) {
   #nav > ul > li:not(:last-child) {
     border-right: 1px solid #D9BA31;

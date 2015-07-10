@@ -8,3 +8,8 @@ My attempt at creating a more accessible multi-level dropdown navigation menu, w
 - **Tabbing** into and out of the element with a keyboard
 
 ## [Read the blog post](http://bitsofco.de/2015/accessible-multi-level-dropdown-navigation/)
+
+
+### Credits
+
+Although I started this myself, I received a lot of valuable input from people in the comments section of the blog post.

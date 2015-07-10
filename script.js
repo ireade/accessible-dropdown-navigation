@@ -11,10 +11,14 @@ $(document).ready(function() {
             $('#nav > ul > li:not(#toggleMenu)').removeClass('js-showElement');
             $(this).removeClass('js-open');
 
+            $(this).attr('aria-expanded', false);
+
         } else {
 
             $('#nav > ul > li:not(#toggleMenu)').addClass('js-showElement');
             $(this).addClass('js-open');
+
+            $(this).attr('aria-expanded', true);
 
         }
 
