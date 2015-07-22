@@ -12,4 +12,4 @@ My attempt at creating a more accessible multi-level dropdown navigation menu, w
 
 ### Credits
 
-Although I started this myself, I received a lot of valuable input from people in the comments section of the blog post.
+Although I started this myself, I received a lot of valuable input from people in the comments section of the blog post and have updated the final menu. [Check out the comments](http://bitsofco.de/2015/accessible-multi-level-dropdown-navigation/#disqus_thread)
