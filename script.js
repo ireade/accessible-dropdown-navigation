@@ -37,6 +37,8 @@ $(document).ready(function() {
     // When interacting with a li that has a sub menu
     $('li:has("ul")').on('mouseover keyup click mouseleave', function(e) {
 
+        console.log("test")
+
     	// If either -
     		// tabbing into the li that has a sub menu
     		// hovering over the li that has a sub menu
@@ -81,8 +83,6 @@ $(document).ready(function() {
 	            $(this).children('ul').addClass('js-showElement');
 
 			}
-
-			return false;
 
 		} // end click event
 
